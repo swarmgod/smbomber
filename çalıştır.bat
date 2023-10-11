@@ -1,0 +1,3 @@
+python smsbomber.py
+
+pause

@@ -14,7 +14,7 @@ with open("sms.py", "r", encoding="utf-8") as f:
 if read == r:
     pass
 else:
-    print(Fore.RED + "Güncelleme yapılıyor...")
+    print(Fore.RED + "Guncelleme yapiliyor...")
     with open("sms.py", "w", encoding="utf-8") as f:
         f.write(r)
 
@@ -43,7 +43,7 @@ def send_sms():
                             tel_liste.append(i)
                 sonsuz = ""
             except FileNotFoundError:
-                output_text.insert(END, "Hatalı dosya dizini. Tekrar deneyiniz.\n")
+                output_text.insert(END, "Hatali dosya dizini. Tekrar deneyiniz.\n")
                 return
         else:
             try:
@@ -51,16 +51,16 @@ def send_sms():
                 if len(tel_no) != 10:
                     raise ValueError
                 tel_liste.append(tel_no)
-                sonsuz = "(Sonsuz ise 'enter' tuşuna basınız)"  
+                sonsuz = "(Sonsuz ise 'enter' tusuna basiniz)"  
             except ValueError:
-                output_text.insert(END, "Hatalı telefon numarası. Tekrar deneyiniz.\n")
+                output_text.insert(END, "Hatali telefon numarasi. Tekrar deneyiniz.\n")
                 return
         
         try:
             if ("@" not in mail or ".com" not in mail) and mail != "":
                 raise
         except:
-            output_text.insert(END, "Hatalı mail adresi. Tekrar deneyiniz.\n")
+            output_text.insert(END, "Hatali mail adresi. Tekrar deneyiniz.\n")
             return
         
         try:
@@ -69,16 +69,16 @@ def send_sms():
             else:
                 kere = None
         except ValueError:
-            output_text.insert(END, "Hatalı giriş yaptın. Tekrar deneyiniz.\n")
+            output_text.insert(END, "Hatali giris yaptin. Tekrar deneyiniz.\n")
             return
         
         try:
             aralik = int(aralik)
         except ValueError:
-            output_text.insert(END, "Hatalı giriş yaptın. Tekrar deneyiniz.\n")
+            output_text.insert(END, "Hatali giris yaptin. Tekrar deneyiniz.\n")
             return
 
-        output_text.delete(1.0, END)  # Log alanını temizle
+        output_text.delete(1.0, END)  # Log alanini temizle
 
         if kere is None: 
             sms = SendSms(tel_no, mail)
@@ -91,12 +91,12 @@ def send_sms():
                                 exec("sms."+attribute+"()")
                                 sleep(aralik)
                                 output_text.insert(END, f"{attribute} denendi..\n")
-                                output_text.see(END)  # Log alanını en son yazılan satıra kaydır
-                                root.update()  # Arayüzü güncelle
+                                output_text.see(END)  # Log alanini en son yazilan satira kaydir
+                                root.update()  # Arayuzu guncelle
                             except Exception as e:
                                 output_text.insert(END, f"{attribute} denendi.: {str(e)}\n")
-                                output_text.see(END)  # Log alanını en son yazılan satıra kaydır
-                                root.update()  # Arayüzü güncelle
+                                output_text.see(END)  # Log alanini en son yazilan satira kaydir
+                                root.update()  # Arayuzu guncelle
         for i in tel_liste:
             sms = SendSms(i, mail)
             if isinstance(kere, int):
@@ -110,26 +110,26 @@ def send_sms():
                                     try:
                                         exec("sms."+attribute+"()")
                                         sleep(aralik)
-                                        output_text.insert(END, f"{attribute} başarılı.\n")
-                                        output_text.see(END)  # Log alanını en son yazılan satıra kaydır
-                                        root.update()  # Arayüzü güncelle
+                                        output_text.insert(END, f"{attribute} basarili.\n")
+                                        output_text.see(END)  # Log alanini en son yazilan satira kaydir
+                                        root.update()  # Arayuzu guncelle
                                     except Exception as e:
-                                        output_text.insert(END, f"{attribute} başarısız: {str(e)}\n")
-                                        output_text.see(END)  # Log alanını en son yazılan satıra kaydır
-                                        root.update()  # Arayüzü güncelle
+                                        output_text.insert(END, f"{attribute} basarisiz: {str(e)}\n")
+                                        output_text.see(END)  # Log alanini en son yazilan satira kaydir
+                                        root.update()  # Arayuzu guncelle
 
     def contact_button_clicked():
         output_text.insert(END, "Discord: 00bir\nTelegram: pala001\n")
-        output_text.see(END)  # Log alanını en son yazılan satıra kaydır / Made by Lexer
+        output_text.see(END)  # Log alanini en son yazilan satira kaydir / Made by Lexer
 
     root = Tk()
-    root.title("SMS Gönderme Programı")
+    root.title("SMS Gonderme Programi")
     root.geometry("600x400")
 
     input_frame = Frame(root)
     input_frame.pack(side=LEFT, padx=20)
 
-    label1 = Label(input_frame, text="Telefon Numarası:", width=15)
+    label1 = Label(input_frame, text="Telefon Numarasi:", width=15)
     label1.grid(row=0, column=0, padx=10, pady=5)
     tel_entry = Entry(input_frame, width=25)
     tel_entry.grid(row=0, column=1, padx=10, pady=5)
@@ -139,12 +139,12 @@ def send_sms():
     mail_entry = Entry(input_frame, width=25)
     mail_entry.grid(row=1, column=1, padx=10, pady=5)
 
-    label3 = Label(input_frame, text="Kaç Adet:", width=15)
+    label3 = Label(input_frame, text="Kac Adet:", width=15)
     label3.grid(row=2, column=0, padx=10, pady=5)
     kere_entry = Entry(input_frame, width=25)
     kere_entry.grid(row=2, column=1, padx=10, pady=5)
 
-    label4 = Label(input_frame, text="Aralık (saniye):", width=15)
+    label4 = Label(input_frame, text="Aralik (saniye):", width=15)
     label4.grid(row=3, column=0, padx=10, pady=5)
     aralik_entry = Entry(input_frame, width=25)
     aralik_entry.grid(row=3, column=1, padx=10, pady=5)
@@ -154,10 +154,10 @@ def send_sms():
     dizin_entry = Entry(input_frame, width=25)
     dizin_entry.grid(row=4, column=1, padx=10, pady=5)
 
-    send_button = Button(input_frame, text="SMS Gönder", command=send_button_clicked)
+    send_button = Button(input_frame, text="SMS Gonder", command=send_button_clicked)
     send_button.grid(row=5, column=0, columnspan=2, pady=10)
 
-    contact_button = Button(input_frame, text="İletişim", command=contact_button_clicked)
+    contact_button = Button(input_frame, text="İletisim", command=contact_button_clicked)
     contact_button.grid(row=6, column=0, columnspan=2, pady=10)
 
     output_frame = Frame(root)

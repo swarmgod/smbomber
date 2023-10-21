@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from colorama import Fore, Style
 from time import sleep
 from os import system

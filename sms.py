@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import requests
 from random import choice
 from string import ascii_lowercase
